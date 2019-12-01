@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-image: url(diary3.jpg);
+				background-size: cover;
+				//height: 200px;
+				//width: 500px;
+				background-position: center;
+				background-repeat: no-repeat;
+				color: white;
+				//height: 100%;
+				//font-family:
+			}
+			/*.login{
+				position: relative;
+			}*/
+			#login{
+				color: black;
+				width: 345px;
+				height: 460px;
+				//margin: 100px 500px;/*use auto*/
+				//background: rgba(0, 0, 0, 0.5);
+				//margin: auto;
+				position: relative;
+      	top: 20px;
+      	left: 485px;
+				padding: 20px;
+			}
+			input{
+				border: none;
+				border-bottom: 1px solid black;
+				background: transparent;
+				height: 30px;
+				width: 100%;
+			}
+			#head{
+				height:10px;
+				width: 100%;
+			}
+			.button{
+				border:none; 
+				//position:relative; 
+				color:black;
+				cursor:pointer;
+				margin:10% 35%; 
+				font-size:24px;
+				background-color: transparent;
+				border-radius: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="login">
+			<h1 style="text-align: center;">REGISTRATION</h1>
+			<center>Did you <a id = "forget" href='#'>forget your password </a>to your <a href="cover.html">online journal</a>?</center>
+			<form action = "registration.php" method = "post">
+			<h2>Username</h2>
+			<input type="text" name = "username" placeholder="Enter Username"/><br><br>
+			<h2>Email</h2>
+      <input id = "email" type="email" name = "email" placeholder="Enter Email"/><br><br>
+			<h2>Password</h2>
+			<input id = "p1" type="password" name = "password1"placeholder="Enter Password"/>
+			<br><br>
+			<h2>Re-Enter Password</h2>
+      <input id = "p2" type="password" name = "password" placeholder="Re-Enter Password"/><br>
+			<button type = "submit" class="button"><b>Submit</b></button>
+			<!--<input type = "submit" class = "submit" value = "Submit">-->
+			</form>
+		</div>
+		    <script>
+      document.getElementsByClassName("button")[0].addEventListener("mouseover", change, false);
+      document.getElementsByClassName("button")[0].addEventListener("mouseout", change1, false);
+			document.getElementById("forget").addEventListener("click", function(){prompt("Enter your email:");}, false);
+      function change(){
+        document.getElementsByClassName("button")[0].style.color = "blue";
+      }
+      function change1(){
+        document.getElementsByClassName("button")[0].style.color = "black";
+      }
+
+			document.getElementsByClassName("button")[0].addEventListener("click", check, false);
+			function check(){
+				if(document.getElementById("p1").value != document.getElementById("p2").value){
+					window.alert("passwords don't match");
+					document.getElementById("p1").value = "";
+					document.getElementById("p2").value = "";
+				}
+			}
+				</script>
+	</body>
